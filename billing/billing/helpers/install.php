@@ -17,6 +17,7 @@ $blank =
 	'page' => "billing",
 	'currency' => "",
 	'invoice_max_num' => "3",
+    'invoice_time' => "0",
 	'sum' => "100.00",
 	'paging' => "25",
 	'admin' => "",
@@ -25,8 +26,25 @@ $blank =
 	'start' => "log/main/page/1",
     'start_admin' => "main/main",
 	'format' => "float",
-	'version' => "0.8",
-	'urls' => "refund-cashback"
+	'version' => "0.9.5",
+	'urls' => "refund-cashback",
+    'register_group' => "4",
+    'register_login_field' => "phone",
+    'register_login_url' => "/index.php?do=login",
+    'register_success_redirect' => "",
+    'whatsapp_enabled' => "0",
+    'whatsapp_phone_id' => "",
+    'whatsapp_token' => "",
+    'whatsapp_template' => "",
+    'whatsapp_language' => "ru",
+    'whatsapp_require_code' => "1",
+    'whatsapp_code_ttl' => "5",
+    'whatsapp_resend_timeout' => "60",
+    'whatsapp_daily_limit' => "5",
+    'whatsapp_attempt_limit' => "5",
+    'whatsapp_block_minutes' => "30",
+    'whatsapp_stub_mode' => "0",
+    'whatsapp_debug_phone' => ""
 ];
 
 $blank['currency'] = $_Lang['currency'];
