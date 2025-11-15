@@ -80,6 +80,37 @@ return array
 	'bonus_first_comment' => "Бонус первого пополнения баланса",
 	'bonus_comment' => "Бонус пополнения баланса",
 
+	/* Register */
+	'register_title' => "Регистрация",
+	'register_name' => "Имя",
+	'register_name_required' => "Укажите ваше имя.",
+	'register_phone' => "Телефон",
+	'register_school' => "Школа",
+	'register_school_required' => "Укажите школу.",
+	'register_password' => "Пароль",
+	'register_code' => "Код подтверждения",
+	'register_send_code' => "Отправить код",
+	'register_code_sent' => "Код отправлен. Проверьте WhatsApp.",
+	'register_code_disabled' => "WhatsApp временно недоступен. Регистрация возможна без подтверждения номера.",
+	'register_phone_invalid' => "Введите корректный номер телефона в формате +7 (XXX) XXX-XX-XX.",
+	'register_code_invalid' => "Указан неверный код подтверждения.",
+	'register_code_required' => "Введите код из WhatsApp.",
+	'register_code_expired' => "Срок действия кода истёк, запросите новый.",
+	'register_code_blocked' => "Отправка кодов временно заблокирована. Повторите попытку позже.",
+	'register_password_rule' => "Пароль должен содержать не менее 8 символов.",
+	'register_error_exists' => "Пользователь с таким номером уже зарегистрирован.",
+	'register_error_general' => "Не удалось завершить регистрацию. Попробуйте позже.",
+	'register_button' => "Создать аккаунт",
+	'register_have_account' => "Уже есть аккаунт?",
+	'register_login_here' => "Войти",
+	'register_policy' => "Нажимая кнопку, вы соглашаетесь на обработку персональных данных.",
+	'register_success_title' => "Аккаунт создан",
+	'register_success_body' => "Регистрация завершена. Вход выполняется по номеру телефона.",
+	'register_success_login_hint' => "Теперь вы можете <a href=\"%s\">войти</a> в аккаунт.",
+	'register_rate_limited' => "Вы слишком часто запрашиваете код. Повторите через %s сек.",
+	'register_status_wait' => "Отправляем код...",
+	'register_status_default' => "Отправить код",
+
 	'off' => "<div style='background-color: #ff2e2e; color: white; padding: 10px; margin: 5px; border-radius: 5px'>Личный кабинет отключен для всех, кроме администраторов. <br />Включите модуль в админ.панели: Баланс пользователя &rarr; Настройки.</div>"
 
 );

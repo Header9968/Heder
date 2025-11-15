@@ -359,6 +359,128 @@ Class ADMIN
 		);
 
         $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['register_group'],
+            $this->Dashboard->lang['register_group_desc'],
+            "<select name=\"save_con[register_group]\" class=\"uniform\">" . $this->Dashboard->GetGroups($this->Dashboard->config['register_group']) . "</select>"
+        );
+
+        $loginSelect = "<select name=\"save_con[register_login_field]\" class=\"uniform\">";
+        $registerLoginField = $this->Dashboard->config['register_login_field'] ?: 'phone';
+        $loginVariants = [
+            'phone' => $this->Dashboard->lang['register_login_field_phone'],
+            'name' => $this->Dashboard->lang['register_login_field_name']
+        ];
+
+        foreach ($loginVariants as $value => $title)
+        {
+            $selected = $registerLoginField == $value ? 'selected' : '';
+            $loginSelect .= "<option value=\"{$value}\" {$selected}>{$title}</option>";
+        }
+        $loginSelect .= "</select>";
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['register_login_field'],
+            $this->Dashboard->lang['register_login_field_desc'],
+            $loginSelect
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['register_login_url'],
+            $this->Dashboard->lang['register_login_url_desc'],
+            "<input name=\"save_con[register_login_url]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['register_login_url'] ."\" style=\"width: 100%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['register_success_redirect'],
+            $this->Dashboard->lang['register_success_redirect_desc'],
+            "<input name=\"save_con[register_success_redirect]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['register_success_redirect'] ."\" style=\"width: 100%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_enabled'],
+            $this->Dashboard->lang['whatsapp_enabled_desc'],
+            $this->Dashboard->MakeICheck("save_con[whatsapp_enabled]", $this->Dashboard->config['whatsapp_enabled'])
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_phone_id'],
+            $this->Dashboard->lang['whatsapp_phone_id_desc'],
+            "<input name=\"save_con[whatsapp_phone_id]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_phone_id'] ."\" style=\"width: 100%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_token'],
+            $this->Dashboard->lang['whatsapp_token_desc'],
+            "<input name=\"save_con[whatsapp_token]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_token'] ."\" style=\"width: 100%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_template'],
+            $this->Dashboard->lang['whatsapp_template_desc'],
+            "<input name=\"save_con[whatsapp_template]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_template'] ."\" style=\"width: 100%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_language'],
+            $this->Dashboard->lang['whatsapp_language_desc'],
+            "<input name=\"save_con[whatsapp_language]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_language'] ."\" style=\"width: 30%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_require_code'],
+            $this->Dashboard->lang['whatsapp_require_code_desc'],
+            $this->Dashboard->MakeICheck("save_con[whatsapp_require_code]", $this->Dashboard->config['whatsapp_require_code'])
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_code_ttl'],
+            $this->Dashboard->lang['whatsapp_code_ttl_desc'],
+            "<input name=\"save_con[whatsapp_code_ttl]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_code_ttl'] ."\" style=\"width: 20%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_resend_timeout'],
+            $this->Dashboard->lang['whatsapp_resend_timeout_desc'],
+            "<input name=\"save_con[whatsapp_resend_timeout]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_resend_timeout'] ."\" style=\"width: 20%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_daily_limit'],
+            $this->Dashboard->lang['whatsapp_daily_limit_desc'],
+            "<input name=\"save_con[whatsapp_daily_limit]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_daily_limit'] ."\" style=\"width: 20%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_attempt_limit'],
+            $this->Dashboard->lang['whatsapp_attempt_limit_desc'],
+            "<input name=\"save_con[whatsapp_attempt_limit]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_attempt_limit'] ."\" style=\"width: 20%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_block_minutes'],
+            $this->Dashboard->lang['whatsapp_block_minutes_desc'],
+            "<input name=\"save_con[whatsapp_block_minutes]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_block_minutes'] ."\" style=\"width: 20%\">"
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_stub_mode'],
+            $this->Dashboard->lang['whatsapp_stub_mode_desc'],
+            $this->Dashboard->MakeICheck("save_con[whatsapp_stub_mode]", $this->Dashboard->config['whatsapp_stub_mode'])
+        );
+
+        $this->Dashboard->ThemeAddStr(
+            $this->Dashboard->lang['whatsapp_debug_phone'],
+            $this->Dashboard->lang['whatsapp_debug_phone_desc'],
+            "<input name=\"save_con[whatsapp_debug_phone]\" class=\"form-control\" type=\"text\" value=\"" . $this->Dashboard->config['whatsapp_debug_phone'] ."\" style=\"width: 50%\">"
+        );
+
+        $tabs[] = array(
+            'id' => 'register',
+            'title' => $this->Dashboard->lang['register_tab'],
+            'content' => $this->Dashboard->ThemeParserStr()
+        );
+
+        $this->Dashboard->ThemeAddStr(
             $this->Dashboard->lang['settings_status'],
             $this->Dashboard->lang['refund_status_desc'],
             $this->Dashboard->MakeCheckBox("save_con[coupons]",  $this->Dashboard->config['coupons'])
